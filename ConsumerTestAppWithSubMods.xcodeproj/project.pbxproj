@@ -19,7 +19,18 @@
 		A45EADCF170B2DA000084F45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45EADCE170B2DA000084F45 /* ViewController.m */; };
 		A45EADD2170B2DA000084F45 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45EADD0170B2DA000084F45 /* ViewController_iPhone.xib */; };
 		A45EADD5170B2DA000084F45 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45EADD3170B2DA000084F45 /* ViewController_iPad.xib */; };
+		A45EADE2170B353200084F45 /* libStaticLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A45EADE1170B350E00084F45 /* libStaticLibTest.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A45EADE0170B350E00084F45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A45EADDC170B350E00084F45 /* StaticLibTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A407C94C170B0687007E68AC;
+			remoteInfo = StaticLibTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A45EADB2170B2DA000084F45 /* ConsumerTestAppWithSubMods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsumerTestAppWithSubMods.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +50,7 @@
 		A45EADCE170B2DA000084F45 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A45EADD1170B2DA000084F45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		A45EADD4170B2DA000084F45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		A45EADDC170B350E00084F45 /* StaticLibTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StaticLibTest.xcodeproj; path = External/StaticLibTest.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45EADE2170B353200084F45 /* libStaticLibTest.a in Frameworks */,
 				A45EADB6170B2DA000084F45 /* UIKit.framework in Frameworks */,
 				A45EADB8170B2DA000084F45 /* Foundation.framework in Frameworks */,
 				A45EADBA170B2DA000084F45 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +71,7 @@
 		A45EADA9170B2DA000084F45 = {
 			isa = PBXGroup;
 			children = (
+				A45EADDB170B34F500084F45 /* Libraries */,
 				A45EADBB170B2DA000084F45 /* ConsumerTestAppWithSubMods */,
 				A45EADB4170B2DA000084F45 /* Frameworks */,
 				A45EADB3170B2DA000084F45 /* Products */,
@@ -110,6 +124,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A45EADDB170B34F500084F45 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A45EADDC170B350E00084F45 /* StaticLibTest.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		A45EADDD170B350E00084F45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A45EADE1170B350E00084F45 /* libStaticLibTest.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,12 +179,28 @@
 			mainGroup = A45EADA9170B2DA000084F45;
 			productRefGroup = A45EADB3170B2DA000084F45 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A45EADDD170B350E00084F45 /* Products */;
+					ProjectRef = A45EADDC170B350E00084F45 /* StaticLibTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A45EADB1170B2DA000084F45 /* ConsumerTestAppWithSubMods */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A45EADE1170B350E00084F45 /* libStaticLibTest.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libStaticLibTest.a;
+			remoteRef = A45EADE0170B350E00084F45 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A45EADB0170B2DA000084F45 /* Resources */ = {
@@ -277,6 +323,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConsumerTestAppWithSubMods/ConsumerTestAppWithSubMods-Prefix.pch";
 				INFOPLIST_FILE = "ConsumerTestAppWithSubMods/ConsumerTestAppWithSubMods-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -288,6 +335,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConsumerTestAppWithSubMods/ConsumerTestAppWithSubMods-Prefix.pch";
 				INFOPLIST_FILE = "ConsumerTestAppWithSubMods/ConsumerTestAppWithSubMods-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,6 +360,7 @@
 				A45EADDA170B2DA000084F45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

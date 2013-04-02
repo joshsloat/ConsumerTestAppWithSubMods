@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <StaticLibTest/CLStaticLibTest.h>
 
 @interface ViewController ()
 
@@ -18,7 +19,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"Todo: say hello world from lib code");
+    CLStaticLibTest *libTestWithModule = [[CLStaticLibTest alloc] init];
+    [libTestWithModule testMethod];
 }
 
 - (void)didReceiveMemoryWarning
