@@ -21,6 +21,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     CLStaticLibTest *libTestWithModule = [[CLStaticLibTest alloc] init];
     [libTestWithModule testMethod];
+    
+    NSLog(@"I'm on a branch");
 }
 
 - (void)didReceiveMemoryWarning
